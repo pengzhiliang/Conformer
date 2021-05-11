@@ -31,23 +31,7 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 ```
 
 ## Training
-To train Conformer-Ti and Conformer-S on ImageNet on a single node with 8 gpus for 300 epochs run:
-
-Conformer-Ti
-```
-export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-OUTPUT='./output/Conformer_tiny_patch16_batch_1024_lr1e-3_300epochs'
-
-python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_env main.py \
-                                   --model Conformer_tiny_patch16 \
-                                   --data-set IMNET \
-                                   --batch-size 128 \
-                                   --lr 0.001 \
-                                   --num_workers 4 \
-                                   --data-path /data/user/Dataset/ImageNet_ILSVRC2012/ \
-                                   --output_dir ${OUTPUT} \
-                                   --epochs 300
-```
+To train Conformer-S on ImageNet on a single node with 8 gpus for 300 epochs run:
 
 Conformer-S
 ```
@@ -64,3 +48,11 @@ python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_
                                    --output_dir ${OUTPUT} \
                                    --epochs 300
 ```
+
+## Model Zoo
+
+| Model        | Parameters | MACs   | Top-1 Acc | Link |
+| ------------ | ---------- | ------ | --------- | ---- |
+| Conformer-Ti | 23.5 M     | 5.2 G  | 81.3 %    | [baidu]()(code: ) [google]() |
+| Conformer-S  | 37.7 M     | 10.6 G | 83.4 %    | [baidu]()(code: ) [google]() |
+| Conformer-B  | 83.3 M     | 23.3 G | 84.1 %    | [baidu]()(code: ) [google]() |
