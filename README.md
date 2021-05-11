@@ -1,4 +1,4 @@
-# Conformer: Local Features Coupling Global Representations for Visual Recognition
+# Conformer: Local Features Coupling Global Representations for Visual Recognition ([arxiv](https://arxiv.org/abs/2105.03889))
 
 This repository is built upon [DeiT](https://github.com/facebookresearch/deit) and [timm](https://github.com/rwightman/pytorch-image-models)
 
@@ -39,7 +39,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 OUTPUT='./output/Conformer_small_patch16_batch_1024_lr1e-3_300epochs'
 
 python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_env main.py \
-                                   --model Conformer_tiny_patch16 \
+                                   --model Conformer_small_patch16 \
                                    --data-set IMNET \
                                    --batch-size 128 \
                                    --lr 0.001 \
@@ -56,3 +56,13 @@ python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_
 | Conformer-Ti | 23.5 M     | 5.2 G  | 81.3 %    | [baidu](https://pan.baidu.com/s/12AblBmhUu5gnYsPjnDE_Jg)(code: hzhm) [google]() |
 | Conformer-S  | 37.7 M     | 10.6 G | 83.4 %    | [baidu](https://pan.baidu.com/s/1kYOZ9mRP5fvujH6snsOjew)(code: qvu8) [google]() |
 | Conformer-B  | 83.3 M     | 23.3 G | 84.1 %    | [baidu](https://pan.baidu.com/s/1FL5XDAqHoimpUxNSunKq0w)(code: b4z9) [google]() |
+
+## Citation
+```
+@article{peng2021conformer,
+      title={Conformer: Local Features Coupling Global Representations for Visual Recognition}, 
+      author={Zhiliang Peng and Wei Huang and Shanzhi Gu and Lingxi Xie and Yaowei Wang and Jianbin Jiao and Qixiang Ye},
+      journal={arXiv preprint arXiv:2105.03889},
+      year={2021},
+}
+```
