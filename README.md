@@ -53,9 +53,9 @@ python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_
 
 | Model        | Parameters | MACs   | Top-1 Acc | Link |
 | ------------ | ---------- | ------ | --------- | ---- |
-| Conformer-Ti | 23.5 M     | 5.2 G  | 81.3 %    | [baidu](https://pan.baidu.com/s/12AblBmhUu5gnYsPjnDE_Jg)(code: hzhm) [google]() |
-| Conformer-S  | 37.7 M     | 10.6 G | 83.4 %    | [baidu](https://pan.baidu.com/s/1kYOZ9mRP5fvujH6snsOjew)(code: qvu8) [google]() |
-| Conformer-B  | 83.3 M     | 23.3 G | 84.1 %    | [baidu](https://pan.baidu.com/s/1FL5XDAqHoimpUxNSunKq0w)(code: b4z9) [google]() |
+| Conformer-Ti | 23.5 M     | 5.2 G  | 81.3 %    | [baidu](https://pan.baidu.com/s/12AblBmhUu5gnYsPjnDE_Jg)(code: hzhm) [google](https://drive.google.com/file/d/1oeQ9LSOGKEUaYGu7WTlUGl3KDsQIi0MA/view?usp=sharing) |
+| Conformer-S  | 37.7 M     | 10.6 G | 83.4 %    | [baidu](https://pan.baidu.com/s/1kYOZ9mRP5fvujH6snsOjew)(code: qvu8) [google](https://drive.google.com/file/d/1mpOlbLaVxOfEwV4-ha78j_1Ebqzj2B83/view?usp=sharing) |
+| Conformer-B  | 83.3 M     | 23.3 G | 84.1 %    | [baidu](https://pan.baidu.com/s/1FL5XDAqHoimpUxNSunKq0w)(code: b4z9) [google](https://drive.google.com/file/d/1oeQ9LSOGKEUaYGu7WTlUGl3KDsQIi0MA/view?usp=sharing) |
 
 ## Citation
 ```
