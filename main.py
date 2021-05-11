@@ -135,7 +135,7 @@ def get_args_parser():
     # * Finetuning params
     parser.add_argument('--finetune', default='', help='finetune from checkpoint')
 
-    parser.add_argument('--evaluate-freq', type=int, default=5, help='frequency of perform evaluation (default: 5)')
+    parser.add_argument('--evaluate-freq', type=int, default=1, help='frequency of perform evaluation (default: 5)')
     parser.add_argument('--output_dir', default='',
                         help='path where to save, empty for no saving')
     parser.add_argument('--device', default='cuda',
@@ -347,7 +347,7 @@ def main(args):
                     'model_ema': get_state_dict(model_ema),
                     'args': args,
                 }, checkpoint_path)
-        if epoch % args.evaluate_freq == 0 or epoch > 290:
+        if epoch % args.evaluate_freq == 0:
             test_stats = evaluate(data_loader_val, model, device)
             print(f"Accuracy of the network on the {len(dataset_val)} test images: {test_stats['acc1']:.1f}%")
             max_accuracy = max(max_accuracy, test_stats["acc1"])
