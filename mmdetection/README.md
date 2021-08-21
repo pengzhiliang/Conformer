@@ -12,16 +12,18 @@ export OMP_NUM_THREADS=1
 GPU_NUM=8
 
 CONFIG="./configs/faster_rcnn/faster_rcnn_conformer_small_patch32_fpn_1x_coco.py"
-
 WORK_DIR='./work_dir/faster_rcnn_conformer_small_patch32_lr_1e_4_fpn_1x_coco_1344_800'
 
-
+# Train
 python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=50040 --use_env ./tools/train.py ${CONFIG} --work-dir ${WORK_DIR} --gpus ${GPU_NUM}  --launcher pytorch --cfg-options model.pretrained='./pretrain_models/Conformer_small_patch32.pth' model.backbone.patch_size=32
 
-
+# Test
 python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=50040 --use_env ./tools/test.py ${CONFIG} ${WORK_DIR}/latest.pth --launcher pytorch  --eval bbox
-
 ```
 
-Here, we use the Conformer_small_patch32 as backbone, whose pretrain model weight can be downloaded from [baidu]() or [google]().
-.
+Here, we use the Conformer_small_patch32 as backbone, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google (on the way)](). And the results are shown as following (the link of google drive is on the way):
+
+| Method        | Parameters | MACs   | FPS | Bbox mAP | Model Link | log Link |
+| ------------ | ---------- | ------ | ------ | --------- | ---- |---- |
+| Faster R-CNN | 55.4 M     | 288.4 G | 13.5 | 43.1    | [baidu](https://pan.baidu.com/s/1lkZy_FTLeCRg3rVH8dOKOA)(7ax9) | [baidu](https://pan.baidu.com/s/10HTtS8FozMSYfHJv8L2H5w)(ymv4)|
+| Mask R-CNN | 58.1 M     | 341.4 G | 10.9 | 43.6   | [baidu](https://pan.baidu.com/s/1wqvhbq4ePAPIZFqE0aCWEQ)(qkwq) |[baidu](https://pan.baidu.com/s/1lSq7hMTSA8fN7WNXTZqp7g)(gh2v)|
