@@ -1,10 +1,10 @@
 ## Notice
-The code is forked from official [project](https://github.com/open-mmlab/mmdetection). So the basic install and usage of mmdetection can be found in [get_started.md](https://github.com/open-mmlab/mmdetection/blob/master/docs/get_started.md). We only add Conformer as a backbone in `mmdet/models/backbones/Conformer.py`.
+The code is forked from official [project](https://github.com/open-mmlab/mmdetection). **So the basic install and usage of mmdetection can be found in** [get_started.md](https://github.com/open-mmlab/mmdetection/blob/master/docs/get_started.md). We just add Conformer as a backbone in `mmdet/models/backbones/Conformer.py`.
 
-At present, we use the feature maps of different stages in the CNN branch as the input of FPN, so that it can be quickly applied to the detection algorithm based on the feature pyramid. At the same time, we think that how to use the features of Transformer branch for detection is also an interesting problem.
+At present, we use the feature maps of different stages in the CNN branch as the input of FPN, so that it can be quickly applied to the detection algorithm based on the feature pyramid. **At the same time, we think that how to use the features of Transformer branch for detection is also an interesting problem.**
 
 ## Training and inference under different detction algorithms
-We provide some config files in `configs`. And anyone can use Conformer to replace the backbone in the existing detection algorithms. Below we will take the `Faster R-CNN` algorithm as an example to illustrate how to perform training and inference:
+We provide some config files in `configs/`. And anyone can use Conformer to replace the backbone in the existing detection algorithms. We take the `Faster R-CNN` algorithm as an example to illustrate how to perform training and inference:
 
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
@@ -24,7 +24,7 @@ python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=500
 #./tools/test.py ${CONFIG} ${WORK_DIR}/latest.pth --eval bbox
 ```
 
-Here, we use the Conformer_small_patch32 as backbone, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google (on the way)](). And the results are shown as following (the link of google drive is on the way):
+Here, we use the `Conformer_small_patch32` as backbone network, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google (on the way)](). And the results are shown as following (the link of google drive is on the way):
 
 | Method        | Parameters | MACs   | FPS | Bbox mAP | Model Link | log Link |
 | ------------ | ---------- | ------ | ------ | --------- | ---- |---- |
