@@ -24,9 +24,9 @@ python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=500
 #./tools/test.py ${CONFIG} ${WORK_DIR}/latest.pth --eval bbox
 ```
 
-Here, we use the `Conformer_small_patch32` as backbone network, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google (on the way)](). And the results are shown as following (the link of google drive is on the way):
+Here, we use the `Conformer_small_patch32` as backbone network, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google drive](https://drive.google.com/file/d/1UrvRg2hnXsie_z_y39Xavdts4qfrwZ1E/view?usp=sharing). And the results are shown as following:
 
-| Method        | Parameters | MACs   | FPS | Bbox mAP | Model Link | log Link |
+| Method        | Parameters | MACs   | FPS | Bbox mAP | Model link | Log link |
 | ------------ | ---------- | ------ | ------ | --------- | ---- |---- |
-| Faster R-CNN | 55.4 M     | 288.4 G | 13.5 | 43.1    | [baidu](https://pan.baidu.com/s/1lkZy_FTLeCRg3rVH8dOKOA)(7ax9) | [baidu](https://pan.baidu.com/s/10HTtS8FozMSYfHJv8L2H5w)(ymv4)|
-| Mask R-CNN | 58.1 M     | 341.4 G | 10.9 | 43.6   | [baidu](https://pan.baidu.com/s/1wqvhbq4ePAPIZFqE0aCWEQ)(qkwq) |[baidu](https://pan.baidu.com/s/1lSq7hMTSA8fN7WNXTZqp7g)(gh2v)|
+| Faster R-CNN | 55.4 M     | 288.4 G | 13.5 | 43.1    | [baidu](https://pan.baidu.com/s/1lkZy_FTLeCRg3rVH8dOKOA)(7ax9) [google](https://drive.google.com/drive/folders/1gCvcW3Zhqq8KK5GnAr9So7-5uJwnrZcA?usp=sharing) | [baidu](https://pan.baidu.com/s/10HTtS8FozMSYfHJv8L2H5w)(ymv4)|
+| Mask R-CNN | 58.1 M     | 341.4 G | 10.9 | 43.6   | [baidu](https://pan.baidu.com/s/1wqvhbq4ePAPIZFqE0aCWEQ)(qkwq) [google](https://drive.google.com/drive/folders/1mjoReWPoBSMUIjBQE5VlhQf0XZ2sE7J-?usp=sharing)|[baidu](https://pan.baidu.com/s/1lSq7hMTSA8fN7WNXTZqp7g)(gh2v)|
