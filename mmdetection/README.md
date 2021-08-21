@@ -7,7 +7,7 @@ At present, we use the feature maps of different stages in the CNN branch as the
 We provide some config files in `configs`. And anyone can use Conformer to replace the backbone in the existing detection algorithms. Below we will take the `Faster R-CNN` algorithm as an example to illustrate how to perform training and inference:
 
 ```bash
-export CUDA_VISIBLE_DEVICES=0,1,3,4,5,6,7
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export OMP_NUM_THREADS=1
 GPU_NUM=8
 
@@ -17,8 +17,11 @@ WORK_DIR='./work_dir/faster_rcnn_conformer_small_patch32_lr_1e_4_fpn_1x_coco_134
 # Train
 python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=50040 --use_env ./tools/train.py ${CONFIG} --work-dir ${WORK_DIR} --gpus ${GPU_NUM}  --launcher pytorch --cfg-options model.pretrained='./pretrain_models/Conformer_small_patch32.pth' model.backbone.patch_size=32
 
-# Test
+# Test on multiple cards
 python -m torch.distributed.launch --nproc_per_node=${GPU_NUM} --master_port=50040 --use_env ./tools/test.py ${CONFIG} ${WORK_DIR}/latest.pth --launcher pytorch  --eval bbox
+
+# Test on single card
+#./tools/test.py ${CONFIG} ${WORK_DIR}/latest.pth --eval bbox
 ```
 
 Here, we use the Conformer_small_patch32 as backbone, whose pretrain model weight can be downloaded from [baidu (k7q5)](https://pan.baidu.com/s/1pum_kOOwQYn404ZeGzjMlg) or [google (on the way)](). And the results are shown as following (the link of google drive is on the way):
