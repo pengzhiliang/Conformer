@@ -1,6 +1,7 @@
 # Conformer: Local Features Coupling Global Representations for Visual Recognition
+**Accpeted to ICCV21!**
 
-This repository is built upon [DeiT](https://github.com/facebookresearch/deit) and [timm](https://github.com/rwightman/pytorch-image-models)
+This repository is built upon [DeiT](https://github.com/facebookresearch/deit), [timm](https://github.com/rwightman/pytorch-image-models), and [mmdetction](https://github.com/open-mmlab/mmdetection).
 # Introduction
 Within Convolutional Neural Network (CNN), the convolution operations are good at extracting local features but experience difficulty to capture global representations.
 Within visual transformer, the cascaded self-attention modules can capture long-distance feature dependencies but unfortunately deteriorate local feature details. 
