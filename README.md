@@ -63,7 +63,7 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 OUTPUT='./output/Conformer_small_patch16_batch_1024_lr1e-3_300epochs'
 
 python -m torch.distributed.launch --master_port 50130 --nproc_per_node=8 --use_env main.py \
-                                   --model Conformer_tiny_patch16 \
+                                   --model Conformer_small_patch16 \
                                    --data-set IMNET \
                                    --batch-size 128 \
                                    --lr 0.001 \
