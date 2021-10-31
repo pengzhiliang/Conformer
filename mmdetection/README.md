@@ -32,3 +32,10 @@ Here, we use the `Conformer_small_patch32` as backbone network, whose pretrain m
 | Mask R-CNN | 58.1 M     | 341.4 G | 10.9 | 43.6   | [baidu](https://pan.baidu.com/s/1wqvhbq4ePAPIZFqE0aCWEQ)(qkwq) [google](https://drive.google.com/drive/folders/1mjoReWPoBSMUIjBQE5VlhQf0XZ2sE7J-?usp=sharing)|[baidu](https://pan.baidu.com/s/1lSq7hMTSA8fN7WNXTZqp7g)(gh2v)|
 |PAA (1x single scale)| - | - | - | 46.5 | (coming soon) | -|
 |Cascade Mask RCNN (1x single scale)| - | - | - | 47.3 | (coming soon) | -|
+
+## Update Detection Performance
+
+| Method        | Schedule | Parameters | MACs   | FPS | Bbox mAP | Segm mAP |
+| ------------ | ----- | ----- | ------ | ------ | --------- | ---- |
+Faster R-CNN | 1x | 55.4 M |   288.4 G | 13.5 | 43.7 | - |
+Faster R-CNN | 3x | 55.4 M |   288.4 G | 13.5 | 46.1 | - |
